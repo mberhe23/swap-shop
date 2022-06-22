@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  get 'pages/home'
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
+  resources :listings, except: :destroy do
+    resources :requests, only: %i[create new]
+    resources :swaps, only: %i[new create]
+  end
+
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get '/profile', to: 'pages#profile'
 end
