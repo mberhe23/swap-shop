@@ -1,0 +1,23 @@
+// Place all the styles related to the Listings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// form //
+
+.listing-new-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listing-new-form-content{
+  background-color: rgb(144, 38, 0);
+  padding: 2% 3%;
+  border-radius: 5px;
+  width: 45%;
+  margin-bottom: 3%;
+}
+
+.listing-new-form-content input {
+  border-radius: 2px;
+}
