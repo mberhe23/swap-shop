@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  before_action :set_apartment, only %i[show edit update]
+  before_action :set_listing, only: %i[show edit update]
   def index
     @listings = Listing.all
   end
@@ -33,7 +33,7 @@ class ListingsController < ApplicationController
 
   private
 
-  def set_apartment
+  def set_listing
     @listing = Listing.find(params[:id])
   end
 
