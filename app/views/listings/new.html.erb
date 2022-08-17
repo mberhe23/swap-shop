@@ -8,8 +8,12 @@
       <%= f.input :description %>
       <%= f.input :category %>
       <%# <%= f.input :condtion %>
-      <div>
-        <%= f.input :photo %>
+            <%= f.input :photo, as: :file,
+                required: true, input_html: { hidden: true },
+                id: "photo-btn"%>
+      <a id="upload-btn" class="btn photo-btn"><i class="icon-upload-alt"></i> Upload</a>
+      <div class="listing-new-btns">
+
         <%= f.submit "Create", class: "btn create-btn" %>
       </div>
     <% end %>

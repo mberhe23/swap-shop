@@ -13,7 +13,7 @@ class ListingsController < ApplicationController
     @listing.user = current_user
     @listing.save
     if @listing.save
-      redirect_to listing(@listing)
+      redirect_to listings_path
     else
       render :new
     end
