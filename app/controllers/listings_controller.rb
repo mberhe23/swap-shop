@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  before_action :set_apartment, only %i[show edit update]
+  before_action :set_apartment, only: %i[show edit update]
   def index
     @listings = Listing.all
   end
