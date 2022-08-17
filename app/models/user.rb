@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   # profile
   has_one_attached :photo
-  validates :photo, presence: true
+  # validates :photo, presence: true
   validates :email, uniqueness: true
 
   # relation to other models
