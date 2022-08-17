@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+  before_action :set_apartment, only %i[show edit update]
   def index
     @listings = Listing.all
   end
@@ -19,21 +20,22 @@ class ListingsController < ApplicationController
   end
 
   def edit
-    @listing = Listing.find(params[:id])
   end
 
   def update
-    @listing = Listing.find(params[:id])
     @listing.update(listing_params)
     redirect_to listing_path(@listing)
   end
 
   def show
-    @listing = Listing.find(params[:id])
   end
 
 
   private
+
+  def set_apartment
+    @listing = Listing.find(params[:id])
+  end
 
   def listing_params
     params.require(:listing).permit(:title, :description, :category, :condtion, :photo)
