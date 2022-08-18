@@ -1,1 +1,5 @@
-<h1>listings/index page</h1>
+<h1>Available Items</h1>
+
+<% listings.each do |listing| %>
+  <%= render "shared/card" %>
+<% end %>
