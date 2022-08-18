@@ -30,6 +30,7 @@ class ListingsController < ApplicationController
   def show
   end
 
+  # add delete function
 
   private
 
