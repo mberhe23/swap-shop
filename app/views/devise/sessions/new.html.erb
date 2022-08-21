@@ -1,9 +1,12 @@
 <div class="page-title">
-  <h2>Log in</h2>
+  <div class="sign-up">
+    <h2>Log in</h2>
+  </div>
 </div>
+
 <div class="sign-in">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-input form-lg">
+  <div class="form-input form-sm">
 
     <div class="field">
       <%= f.label :email %><br />
@@ -23,12 +26,12 @@
     <% end %>
   </div>
   <div class="form-actions">
-    <div class="actions">
+    <div class="actions sign-in-btns">
       <%= f.submit "Log in" %>
     </div>
   <% end %>
   </div>
-  <div class="">
+  <div class="log-in">
   <%= render "devise/shared/links" %>
   </div>
 </div>
