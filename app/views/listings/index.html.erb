@@ -1,5 +1,12 @@
-<h1>Available Items</h1>
+<div class="container">
+  <h1>Available Items</h1>
 
-<% listings.each do |listing| %>
-  <%= render "shared/card" %>
-<% end %>
+  <% if @listings.count > 0 %>
+    <% @listings.each do |listing| %>
+      <%= render "shared/card" %>
+    <% end %>
+  <% else %>
+    <h3><i class="fa-solid fa-face-frown"></i> Nothing availabe near you <i class="fa-solid fa-face-frown"></i></h3>
+    <p>Please post your unwanted items <i class="fa-solid fa-shirt"></i> and share our site with your friends.</p>
+  <% end %>
+</div>
