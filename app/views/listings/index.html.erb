@@ -3,7 +3,12 @@
 
   <% if @listings.count > 0 %>
     <% @listings.each do |listing| %>
-      <%= render "shared/card" %>
+      <div class="card" style="width: 18rem;" >
+        <h2><%= link_to listing.title, listing %></h2>
+        <br>
+        <p><%= listing.description %></p>
+        </div>
+      </div>
     <% end %>
   <% else %>
     <h3><i class="fa-solid fa-face-frown"></i> Nothing availabe near you <i class="fa-solid fa-face-frown"></i></h3>

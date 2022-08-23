@@ -20,3 +20,13 @@ end
 puts "---done---"
 
 # Listings
+puts "---creating fake listings---"
+
+# Listing.create! (
+#   user: users.sample,
+#   title: "Jeans",
+#   description: "Madewell boyfriend jeans.  Size 4.  Light wash.",
+#   category: "Bottoms"
+# )
+
+puts "---done---"
