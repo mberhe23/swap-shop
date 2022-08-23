@@ -1,9 +1,14 @@
+<div class="page-title">
+  <div class="sign-up">
+    Available Items
+  </div>
+</div>
 <div class="container">
-  <h1>Available Items</h1>
 
   <% if @listings.count > 0 %>
     <% @listings.each do |listing| %>
       <div class="card" style="width: 18rem;" >
+
         <h2><%= link_to listing.title, listing %></h2>
         <br>
         <p><%= listing.description %></p>
