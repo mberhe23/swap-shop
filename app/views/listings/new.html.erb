@@ -1,5 +1,7 @@
-<div class="page-header">
-  <h1>listing/new page</h1>
+<div class="page-title">
+  <div class="sign-up">
+    Create a Listing!
+  </div>
 </div>
 <div class="listing-new-form">
   <div class="listing-new-form-content">
@@ -7,13 +9,12 @@
       <%= f.input :title %>
       <%= f.input :description %>
       <%= f.input :category %>
-      <%# <%= f.input :condtion %>
+      <%= f.input :condition %>
             <%= f.input :photos, as: :file,
                 required: true, input_html: { multiple: true },
                 id: "photo-btn"%>
-      <a id="upload-btn" class="btn photo-btn"><i class="icon-upload-alt"></i> Upload</a>
-      <div class="listing-new-btns">
-
+      <%# <a id="upload-btn" class="btn photo-btn"><i class="icon-upload-alt"></i> Upload</a> %>
+      <div class="listing-new-btns form-actions">
         <%= f.submit "Create", class: "btn create-btn" %>
       </div>
     <% end %>
