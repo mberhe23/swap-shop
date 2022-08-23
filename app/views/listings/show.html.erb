@@ -2,4 +2,8 @@
 <div class="container">
   <h1><%= @listing.title %></h1>
   <p><%= @listing.description %></p>
+  <%# current user can request this item %>
+  <%= link_to "I want this!", new_listing_swap_path(@listing) %>
+  <br>
+  <%= link_to "Keep browsing", listings_path %>
 </div>
