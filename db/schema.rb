@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_23_184052) do
+ActiveRecord::Schema.define(version: 2022_08_23_205358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2022_06_23_184052) do
   create_table "listings", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.string "photo"
+    t.string "photos"
     t.string "category"
     t.string "condition"
     t.bigint "user_id", null: false
@@ -59,12 +59,18 @@ ActiveRecord::Schema.define(version: 2022_06_23_184052) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "listing_id"
+    t.index ["listing_id"], name: "index_requests_on_listing_id"
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
   create_table "swaps", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "request_id"
+    t.bigint "listing_id"
+    t.index ["listing_id"], name: "index_swaps_on_listing_id"
+    t.index ["request_id"], name: "index_swaps_on_request_id"
   end
 
   create_table "users", force: :cascade do |t|

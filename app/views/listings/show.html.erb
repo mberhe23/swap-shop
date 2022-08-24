@@ -1,5 +1,14 @@
-
+<div class="page-title">
+  <div class="sign-up">
+    <h1><%= @listing.title %></h1>
+  </div>
+</div>
 <div class="container">
+
   <h1><%= @listing.title %></h1>
   <p><%= @listing.description %></p>
+  <%# current user can request this item %>
+  <%# <%= link_to "I want this!", new_listing_request_path(@listing) %> %
+  <br>
+  <%= link_to "Keep browsing", listings_path %>
 </div>
