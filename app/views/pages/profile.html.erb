@@ -1,1 +1,6 @@
 <p>user profile</p>
+<ul>
+  <% @requests.each do |request| %>
+    <li><%= request.listing.title %></li>
+  <% end %>
+</ul>
