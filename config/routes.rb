@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :listings, except: :destroy do
+  resources :listings do
     resources :requests, only: %i[create new]
     resources :swaps, only: %i[new create]
   end
