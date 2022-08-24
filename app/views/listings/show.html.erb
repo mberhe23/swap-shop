@@ -9,7 +9,8 @@
   <p><%= @listing.description %></p>
   <%= cl_image_tag "wkh03m3lij68pnuo7gbj9uwbw2vn" %>
   <%# current user can request this item %>
-  <%# <%= link_to "I want this!", new_listing_request_path(@listing) %> %
+  <%# <%= link_to "I want this!", listing_requests_path(@listing) %>
   <br>
   <%= link_to "Keep browsing", listings_path %>
+
 </div>

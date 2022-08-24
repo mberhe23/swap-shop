@@ -6,9 +6,12 @@ class PagesController < ApplicationController
   end
 
   def profile
-    # swaps = current_user.swaps.select { |swap| swap.state == "paid" }
-    # @user_swaps = swaps.map { |swap| swap.listing}
     @listings = current_user.listings
     @listings = Listing.all
+    @requests = current_user.requests
+    @requests = Request.all
+    # how to access requests on current_user's listing?
+    # swaps = current_user.swaps.select { |swap| swap.state == "paid" }
+    # @user_swaps = swaps.map { |swap| swap.listing}
   end
 end
