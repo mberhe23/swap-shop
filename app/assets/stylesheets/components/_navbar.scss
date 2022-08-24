@@ -11,6 +11,10 @@
   padding-right: 140px;
 }
 
+.navbar-collapse {
+  justify-content: space-evenly;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
