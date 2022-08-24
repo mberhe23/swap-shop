@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_listing, only: %i[show edit update]
   def index
     @listings = Listing.all
@@ -31,6 +32,11 @@ class ListingsController < ApplicationController
   end
 
   # add delete function
+  def destroy
+    @listing = Listing.find(params[:id])
+    @listing.destroy
+    redirect_to profile_path
+  end
 
   private
 
