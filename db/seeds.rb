@@ -1,3 +1,7 @@
+puts "---cleaning database---"
+Listing.destroy_all
+User.destroy_all
+
 # Users
 puts "---creating fake users---"
 default_password = "123456"
@@ -8,7 +12,8 @@ users = []
 user_names.each do |user|
   users << User.create!(
     email: "#{user.downcase}@users.com",
-    password: default_password
+    password: default_password,
+    first_name: user
   )
 end
 
@@ -22,11 +27,27 @@ puts "---done---"
 # Listings
 puts "---creating fake listings---"
 
-# Listing.create! (
-#   user: users.sample,
-#   title: "Jeans",
-#   description: "Madewell boyfriend jeans.  Size 4.  Light wash.",
-#   category: "Bottoms"
-# )
+# listings = {
+#   tops: "t-shirt",
+#   bottoms: "jeans",
+#   outerwear: "coat",
+#   dresses: "long dress",
+#   shoes: "sneakers"
+# }
 
+# def listingCatTitle
+#   create a method to grab the key as the category and the value as the title?
+# end
+
+titles = ["jeans", "t-shirt", "coat", "long dress", "sneakers"]
+categories = ["tops", "bottoms", "outerwear", "dresses", "shoes"]
+
+10.times do
+Listing.create!(
+  user: users.sample,
+  title: titles.sample,
+  description: "Something about the item.",
+  category: categories.sample
+)
+end
 puts "---done---"
