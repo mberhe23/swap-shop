@@ -1,26 +1,25 @@
-<div class="page-title">
-  <div class="sign-up">
-    <h1><%= @listing.title %></h1>
-  </div>
-</div>
 <div class="container">
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-  <% @listing.photo.count.times do %>
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <% end %>
-
-  <% @listing.photos.each do |photo| %>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%= cl_image_tag photo.key, class: d-block w-100, alt: @listing.title %>
+  <%# title %>
+  <div class="page-title">
+    <div class="sign-up">
+      <h1><%= @listing.title %></h1>
     </div>
   </div>
-  <% end %>
-
+  <%# bootstrap carousel %>
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <% @listing.photos.each do |photo| %>
+        <% if photo == @listing.photos.first %>
+          <div class="carousel-item active">
+            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+          </div>
+        <% else %>
+          <div class="carousel-item">
+            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
@@ -30,11 +29,10 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  <p><%= @listing.description %></p>
-  <p><%= @listing.category %></p>
-  <p>See more from <%= @listing.user.first_name %></p>
-  <%# current user can request this item %>
-  <%# <%= link_to "I want this!", listing_requests_path(@listing) %>
-  <br>
-  <%= link_to "Keep browsing", listings_path %>
+
+  <%# link to listings index page %>
+  </div>
+    <%= link_to "Keep browsing", listings_path %>
+  </div>
+
 </div>
