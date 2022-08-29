@@ -4,19 +4,18 @@
   </div>
 </div>
 <div class="container">
-
   <% if @listings.count > 0 %>
     <% @listings.each do |listing| %>
       <div class="card" style="width: 18rem;" >
-
         <h2><%= link_to listing.title, listing %></h2>
         <br>
         <p><%= listing.description %></p>
-        <div class="listing-photos">
-          <% listing.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-          <% end %>
-        </div>
+        <p><%= listing.category %></p>
+          <div class="listing-photos">
+            <% listing.photos.each do |photo| %>
+              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>
