@@ -4,13 +4,18 @@
   </div>
 </div>
 <div class="container">
+  <div>
+    <h1><%= @listing.title %></h1>
+    <p><%= @listing.description %></p>
+    <% @listing.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
 
-  <h1><%= @listing.title %></h1>
-  <p><%= @listing.description %></p>
-  <%= cl_image_tag "wkh03m3lij68pnuo7gbj9uwbw2vn" %>
-  <%# current user can request this item %>
-  <%# <%= link_to "I want this!", listing_requests_path(@listing) %>
-  <br>
+    <%# current user can request this item %>
+    <%# <%= link_to "I want this!", listing_requests_path(@listing) %>
+
+  </div>
+
   <%= link_to "Keep browsing", listings_path %>
 
 </div>

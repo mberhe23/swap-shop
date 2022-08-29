@@ -12,7 +12,11 @@
         <h2><%= link_to listing.title, listing %></h2>
         <br>
         <p><%= listing.description %></p>
-        <div><%= cl_image_tag "1" %></div>
+        <div class="listing-photos">
+          <% listing.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
+        </div>
         </div>
       </div>
     <% end %>

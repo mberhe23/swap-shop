@@ -1,4 +1,5 @@
-<p>user profile</p>
+<p>welcome <%= current_user.first_name %> to your profile</p>
+<%= cl_image_tag current_user.photo.key %>
 <ul>
   <% @requests.each do |request| %>
     <li><%= request.listing.title %></li>
