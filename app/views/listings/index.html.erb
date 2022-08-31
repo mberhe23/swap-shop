@@ -6,18 +6,7 @@
 <div class="container">
   <% if @listings.count > 0 %>
     <% @listings.each do |listing| %>
-      <div class="card" style="width: 18rem;" >
-        <h2><%= link_to listing.title, listing %></h2>
-        <br>
-        <p><%= listing.description %></p>
-        <p><%= listing.category %></p>
-          <div class="listing-photos">
-            <% listing.photos.each do |photo| %>
-              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-            <% end %>
-          </div>
-        </div>
-      </div>
+      <%= render "listings/card", listing: listing %>
     <% end %>
   <% else %>
     <h3><i class="fa-solid fa-face-frown"></i> Nothing availabe near you <i class="fa-solid fa-face-frown"></i></h3>
