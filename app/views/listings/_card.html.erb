@@ -7,8 +7,15 @@
         <p> <%= listing.description %> </p>
       </div>
       <%# add link to user profile below %>
-      <h2> This item was listed by <%= listing.user.first_name %> </h2>
-      <%= cl_image_tag listing.user.photo.key, class: "avatar-bordered" %>
+      <h2> <%= listing.user.first_name %>'s item </h2>
+      <%= cl_image_tag(
+      listing.user.photo.key,
+      gravity: "face",
+      width: 50,
+      height: 50,
+      crop: :fill,
+      class: "avatar-bordered card"
+     ) %>
     </div>
   </div>
 <% end %>
