@@ -3,7 +3,7 @@
     Available Items
   </div>
 </div>
-<div class="container">
+<div class="flex-container">
   <% if @listings.count > 0 %>
     <% @listings.each do |listing| %>
       <%= render "listings/card", listing: listing %>
