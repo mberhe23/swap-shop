@@ -10,18 +10,6 @@
   padding-right: 140px;
 }
 
-.navbar-collapse {
-  justify-content: space-evenly;
-}
-
-.navbar-swap .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-brand img {
-  width: 120px;
-}
-
 .navbar-nav {
   display: contents;
 }
@@ -42,5 +30,5 @@
 }
 
 .navbar-swap .navbar-brand img {
-  width: 120px;
+  width: 100px;
 }
