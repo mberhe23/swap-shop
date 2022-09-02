@@ -1,7 +1,6 @@
 .navbar {
   height: 100px;
-  justify-content: space-between;
-  border-bottom: solid;
+  justify-content: space-evenly;
   border-bottom: solid 1px #4949492c;
   position: sticky;
   top: 0;
@@ -15,7 +14,7 @@
   justify-content: space-evenly;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-swap .navbar-collapse {
   flex-grow: 0;
 }
 
@@ -31,4 +30,17 @@
   margin-left: 20px;
   width: 50px;
   border: 1px;
+}
+
+.navbar-swap {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-swap .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-swap .navbar-brand img {
+  width: 120px;
 }
