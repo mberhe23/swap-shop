@@ -1,34 +1,38 @@
 <div class="container">
-  <%# title %>
-  <div class="page-title">
+  <div class="right-side">
+    <%# title %>
     <div class="header">
       <h1><%= @listing.title %></h1>
     </div>
-  </div>
-  <%# bootstrap carousel %>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <% @listing.photos.each do |photo| %>
-        <% if photo == @listing.photos.first %>
-          <div class="carousel-item active">
-            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-          </div>
-        <% else %>
-          <div class="carousel-item">
-            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-          </div>
-        <% end %>
-      <% end %>
+    <div>
+      <h3>size:</h3>
+      <h3>categories:</h3>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    <div class="card-owner">
+      <h2><%= @listing.user.first_name %></h2>
+      <br>
+      <% if @listing.user.listings.count == 1 %>
+      <p><bold><%= @listing.user.listings.count %></bold> item in their closet</p>
+      <% else %>
+      <p><bold><%= @listing.user.listings.count %></bold> items in their closet</p>
+      <% end %>
+         <%= cl_image_tag(
+      @listing.user.photo.key,
+      gravity: "face",
+      width: 50,
+      height: 50,
+      crop: :fill,
+      class: "avatar-bordered card"
+     ) %>
+      <button type="button" class="btn btn-outline-success"><%= link_to "View Closet", listings_path %></button>
+    </div>
   </div>
+
+
+  <%# carousel %>
+  <%= render "listings/carousel" %>
+
+  <%#  %>
 
   <%# link to listings index page %>
   </div>

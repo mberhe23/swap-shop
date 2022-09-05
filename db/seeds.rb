@@ -54,7 +54,10 @@ titles.map do |title|
   )
   listing.photos.attach(io: file2, filename: "#{title.parameterize}.jpg", content_type: 'image/jpg')
   listing.save!
-  # add more photos? 
+  # add more photos?
+  if test
+    
+  end
 end
 
 puts "---done---"
