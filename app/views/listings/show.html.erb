@@ -8,8 +8,8 @@
       <h3>size:</h3>
       <h3>categories:</h3>
     </div>
-    <div class="card">
-      <%= @listing.user.first_name %>
+    <div class="card-owner">
+      <h2><%= @listing.user.first_name %></h2>
       <br>
       <% if @listing.user.listings.count == 1 %>
       <p><bold><%= @listing.user.listings.count %></bold> item in their closet</p>
@@ -24,6 +24,7 @@
       crop: :fill,
       class: "avatar-bordered card"
      ) %>
+      <button type="button" class="btn btn-outline-success"><%= link_to "View Closet", listings_path %></button>
     </div>
   </div>
 
