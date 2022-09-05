@@ -1,7 +1,7 @@
 <div class="container">
   <%# title %>
   <div class="page-title">
-    <div class="sign-up">
+    <div class="header">
       <h1><%= @listing.title %></h1>
     </div>
   </div>
@@ -32,7 +32,7 @@
 
   <%# link to listings index page %>
   </div>
-    <%= link_to "Keep browsing", listings_path %>
+    <button type="button" class="btn btn-outline-primary"><%= link_to "Keep browsing", listings_path %></button>
   </div>
 
 </div>
